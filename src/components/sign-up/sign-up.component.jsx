@@ -39,7 +39,7 @@ class SignUp extends Component {
             confimpassword: ''
           })
         } catch (error) {
-            console.error(error)
+            console.error('Sign UP', {error})
         }
     }
 
