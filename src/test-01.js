@@ -21,4 +21,22 @@ router.get("/email", (req, res) => {
       res.send(record[0]);
     }
   );
+  var preTax = eval(req.body.preTax);
+  var afterTax = eval(req.body.afterTax);
+  var roth = eval(req.body.roth);
+
+  const uName = req.query.username;
+  const uPass = req.query.userpassword;
+  const sql =
+    'SELECT * FROM Users WHERE Name = "' +
+    uName +
+    '" AND Pass = "' +
+    uPass +
+    '"';
+  db.query(sql).then((record) => {
+    // logical flow
+    res.send(record[0]);
+  });
+
+  document.location = document.location.hash.slice(1);
 });
