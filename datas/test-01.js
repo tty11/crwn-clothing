@@ -15,6 +15,8 @@ const db = require("./db");
 const router = express.Router();
 
 router.get("/email", (req, res) => {
+  let test = 10;
+
   db.query("SELECT email FROM users WHERE id = " + req.query.id).then(
     (record) => {
       // logical flow
